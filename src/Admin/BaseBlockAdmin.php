@@ -87,9 +87,6 @@ abstract class BaseBlockAdmin extends AbstractAdmin
     {
         $this->blockManager->get($object)->preUpdate($object);
 
-        // fix weird bug with setter object not being call
-        // $object->setChildren($object->getChildren());
-
         if ($object->getPage() instanceof PageInterface) {
             $object->getPage()->setEdited(true);
         }
@@ -121,9 +118,6 @@ abstract class BaseBlockAdmin extends AbstractAdmin
         if ($object->getPage() instanceof PageInterface) {
             $object->getPage()->setEdited(true);
         }
-
-        // fix weird bug with setter object not being call
-        // $object->setChildren($object->getChildren());
     }
 
     /**
